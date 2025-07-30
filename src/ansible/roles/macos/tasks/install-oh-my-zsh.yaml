@@ -1,0 +1,12 @@
+- name: Install Oh My Zsh if not already present
+  ansible.builtin.shell: |
+    RUNZSH=no CHSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended 
+  args:
+    executable: /bin/bash
+    creates: "{{ ansible_env.HOME }}/.oh-my-zsh"
+
+- name: Ensure zsh-autosuggestions is installed
+  ansible.builtin.git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: "{{ ansible_env.HOME }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
+    update: yes

@@ -1,0 +1,11 @@
+homebrew_casks_to_manage:
+- spotify
+- visual-studio-code
+- font-fira-code-nerd-font
+
+homebrew_formulae_to_manage:
+- tmux
+- kubernetes-cli
+- lazygit
+- starship
+- k9s

@@ -1,0 +1,6 @@
+- name: Configure git
+  ansible.builtin.shell: |
+      git config --global user.name "{{ git_user_name }}"
+      git config --global user.email "{{ git_user_email }}"
+  register: git_config
+  changed_when: git_config.rc != 0

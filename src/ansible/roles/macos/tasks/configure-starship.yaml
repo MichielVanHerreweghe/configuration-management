@@ -1,0 +1,5 @@
+- name: Copy the starship configuration file
+  ansible.builtin.copy:
+    src: files/starship-configuration.toml
+    dest: "{{ ansible_env.HOME }}/.config/starship.toml"
+    mode: '0644'

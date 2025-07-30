@@ -1,0 +1,10 @@
+all:
+  hosts:
+    mac:
+      ansible_connection: local
+
+  children:
+    macos:
+      hosts:
+        mac:
+          

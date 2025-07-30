@@ -1,0 +1,6 @@
+- name: Configure MacOS
+  hosts: macos
+  tasks:
+    - name: Run MacOS role
+      ansible.builtin.include_role:
+        name: macos
