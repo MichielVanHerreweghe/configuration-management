@@ -1,0 +1,20 @@
+- name: Ensure ~/.config directory exists
+  ansible.builtin.file:
+    path: "{{ ansible_env.HOME }}/.config"
+    state: directory
+    mode: '0755'
+
+- name: Install Homebrew Applications
+  ansible.builtin.include_tasks: install-homebrew-applications.yaml
+
+- name: Configure Git
+  ansible.builtin.include_tasks: configure-git.yaml
+
+- name: Configure Starship
+  ansible.builtin.include_tasks: configure-starship.yaml
+
+- name: Install Oh My ZSH
+  ansible.builtin.include_tasks: install-oh-my-zsh.yaml
+
+- name: Configure ZSH
+  ansible.builtin.include_tasks: configure-zsh.yaml
